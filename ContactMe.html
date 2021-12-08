@@ -6,25 +6,77 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Contact Me</title>
 </head>
+
+<style>
+ body {
+   background-color: rgb(236, 223, 188);
+ }
+ hr {
+   border-style: none;
+   border-top: dotted;
+   border-color:dimgray;
+   border-width: 5px;
+   height: 0px;
+   width: 75%;
+ }
+</style>
+
 <body>
+ <img src="./Images/pigeonremovedwhite.png" alt="pigeonremovedwhite"size width="250" height="250">
 
  <h1>My Contact Details</h1>
- <p><strong>Address: </strong> 2214 Molino Ave</p>
- <p> <strong>Phone Number: </strong>(562)-704-9619</p>
+ <p><strong>Phone Number: </strong>(562)-704-9619</p>
  <p> <strong>Email: </strong>  ramirezbrandon013@gmail.com</p>
 
  <hr>
- <form action="mailto: ramirezbrandon013@gmail.com"></form>
- <label for="Your Name">Your Name:</label>
- <input type="text" name="" id=""><br>
- <label for="Your Email">Your Email:</label>
- <input type="email" name="YourEmail" id="">
- <label for="Password">Password:</label>
- <input type="password" name="YourPassword" id=""><br>
- <label for="Details">Add Details:</label>
- <textarea name="Details" id="" cols="30" rows="10"></textarea><br>
+ <form action="mailto: ramirezbrandon013@gmail.com" method="post" enctype="text/plain"></form>
+ <label for="YourName">Your Name:</label>
+ <input type="text" name="YourName" id="">
+ <br>
+ <br>
+ <label for="YourEmail">Your Email:</label>
+ <input type="email" name="YourEmail">
+<br>
+<br>
+ <label for="YourMessage">Your Message:</label>
+ <br>
+ <textarea name="YourMessage" id="" cols="70" rows="7"></textarea>
+ <br>
+ <br>
  <input type="submit" value="Submit">
-  
+ <hr>
+ <h3>Otherwise, leave a comment!</h3>
  
+ <div class="comment">
+  <textarea id="title" type="text "rows="7" cols="70" onkeyup="Allow()" placeholder="write a comment......"></textarea>
+  <br>
+  <input type="submit" value="Submit" onclick="insert()" style="width:75px;" /></form>
+  </div>
+  <div id="display"></div>
+  <script type="text/javascript">
+  var titles = [];
+  var titleInput = document.getElementById("title");
+  var messageBox = document.getElementById("display");
+  function Allow()
+  {
+  if (!user.title.value.match(/[a-zA-Z]$/) && user.title.value !="")
+  {
+  user.title.value="";
+  alert("Please Enter only alphabets");
+  }
+  window.location.reload()
+  }
+  function insert () {
+  titles.push(titleInput.value);
+  clearAndShow();
+  }
+  function clearAndShow ()
+  {
+  titleInput.value = "";
+  messageBox.innerHTML = "";
+  messageBox.innerHTML += " " + titles.join("<br/> ") + "<br/>";
+  }
+  </script>
+
 </body>
 </html>
